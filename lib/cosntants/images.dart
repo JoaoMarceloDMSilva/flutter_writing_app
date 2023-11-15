@@ -11,10 +11,10 @@ class Images extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
     radius: 50,
-    child: Image.asset(
+    backgroundImage: AssetImage(
       "assets/images/$imageName.jpg",
-      height: heightImage,
-      width: widthImage,
+      // height: heightImage,
+      // width: widthImage,
     ),
     );
   }
