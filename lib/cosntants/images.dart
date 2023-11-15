@@ -4,14 +4,18 @@ import 'package:flutter/material.dart';
 
 class Images extends StatelessWidget {
   final String? imageName;
-  final double? heightImage, largeImage;
-  Images({super.key, required this.imageName, this.heightImage, this.largeImage});
+  final double? heightImage, widthImage;
+  Images({super.key, required this.imageName, this.heightImage, this.widthImage});
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
+    return CircleAvatar(
+    radius: 50,
+    child: Image.asset(
       "assets/images/$imageName.jpg",
       height: heightImage,
+      width: widthImage,
+    ),
     );
   }
 }
