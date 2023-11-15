@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/pages/initial_screen.dart';
 
 void main(List<String> args) {
-  runApp(const Rotas());
+  runApp(const MyApp());
 }
-class Rotas extends StatelessWidget {
-  const Rotas({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "initial_screen",
+      initialRoute: "/",
       routes: {
-        "initial_screen":(context) => InitialScreen(),
+        "/":(context) => InitialScreen(),
       },
     );
   }

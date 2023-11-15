@@ -11,6 +11,8 @@ class CardImage extends StatelessWidget {
         children: [
           Images(
             imageName: "alba_umbra",
+            heightImage: 100,
+            largeImage: 100,
           ),
         Text("Qualquer coisa", 
         style: TextStyle(
