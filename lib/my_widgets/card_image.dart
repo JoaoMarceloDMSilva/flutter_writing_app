@@ -27,12 +27,12 @@ class CardImage extends StatelessWidget {
               width: 5,
             ),
             Container(
-              width: size.width,
+              width: 230,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextTitulo(titulo: "Título Rascunho"),
+                  TextTitulo(titulo: "Alba Umbra"),
                   TextDescricao(
                     descricao:
                         "Tentando criar esse maldito card Tentando criar esse maldito card Tentando criar esse maldito card",
