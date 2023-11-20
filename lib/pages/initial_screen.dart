@@ -25,7 +25,11 @@ class InitialScreen extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color(0xff2C2828),
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
