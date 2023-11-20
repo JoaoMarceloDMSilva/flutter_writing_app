@@ -8,13 +8,14 @@ class CardImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    //Size size = MediaQuery.of(context).size;
     return Padding(
       padding: EdgeInsets.all(10),
       child: Container(
         padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
           color: Color(0xff9F9F9F),
+          borderRadius: BorderRadius.circular(12)
         ),
         child: Row(
           children: [

@@ -7,20 +7,25 @@ class InitialScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xff2C2828),
+        elevation: 0,
+        title: const Text("Nome App"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.settings),
+          )
+        ],
+      ),
       body: Container(
         child: Column(
           children: [
-            Text(
-              "Nome App",
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.black,
-              ),
-            ),
             CardImage()
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
     );
   }
 }
