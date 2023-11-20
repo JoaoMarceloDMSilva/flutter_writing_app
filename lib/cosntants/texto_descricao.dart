@@ -10,10 +10,10 @@ class TextDescricao extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       descricao,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 13,
         color: Colors.black,
-        fontWeight: FontWeight.w100,
+        fontWeight: FontWeight.w400,
       ),
     );
   }

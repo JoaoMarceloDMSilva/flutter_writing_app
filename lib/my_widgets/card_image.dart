@@ -35,7 +35,7 @@ class CardImage extends StatelessWidget {
                   TextTitulo(titulo: "Alba Umbra"),
                   TextDescricao(
                     descricao:
-                        "Tentando criar esse maldito card Tentando criar esse maldito card Tentando criar esse maldito card",
+                        "No alto daquele cume, plantei uma roseira, o vento no cume bate, a rosa no cume cheira.",
                   )
                 ],
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_writing_app/my_widgets/home_appbar.dart';
 import 'package:flutter_writing_app/pages/initial_screen.dart';
 
 void main(List<String> args) {
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //home: const HomeAppBar(),
       initialRoute: "/",
       routes: {
         "/":(context) => InitialScreen(),
