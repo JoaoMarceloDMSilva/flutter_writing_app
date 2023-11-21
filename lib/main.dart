@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_writing_app/pages/create_screen.dart';
 //import 'package:flutter_writing_app/my_widgets/home_appbar.dart';
 import 'package:flutter_writing_app/pages/initial_screen.dart';
 
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: InitialScreen(),
+      // home: InitialScreen(),
+      home: CreateScreen(),
     );
   }
 }
