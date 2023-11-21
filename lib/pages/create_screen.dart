@@ -35,9 +35,11 @@ class CreateScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(12),
             margin: EdgeInsets.only(top: 15),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Bora ver se essa merda funciona",
@@ -48,6 +50,7 @@ class CreateScreen extends StatelessWidget {
                 ),
                 Text(
                   "Já estou sem paciência",
+                  textAlign: TextAlign.left,
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 15,
