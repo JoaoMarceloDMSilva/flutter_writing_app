@@ -71,7 +71,43 @@ class CreateScreen extends StatelessWidget {
                 border: OutlineInputBorder(),
               ),
             ),
-          )
+          ),
+          Container(
+            padding: EdgeInsets.all(20),
+            child: const Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Adicionar Personagens",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                Text(
+                  "O que é uma história sem personagens? Adicione pelo menos um personagem. Você poderá editá-lo melhor e adicionar mais outros porsteriormente.",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal
+                  ),
+                )
+              ],
+            )
+          ),
+          Container( // CAIXA TEXTO INPUT TITULO
+            padding: const EdgeInsets.all(12),
+            // margin: EdgeInsets.only(top: 5),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: "Personagem",
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ),
         ],
       ),
     );
