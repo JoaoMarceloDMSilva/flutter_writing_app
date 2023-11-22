@@ -6,7 +6,8 @@ class CreateScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      
+      appBar: AppBar(//APP BAR
         backgroundColor: const Color(0xff2C2828),
         elevation: 0,
         title: const Text("Nome App",
@@ -34,29 +35,41 @@ class CreateScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
-            padding: EdgeInsets.all(12),
-            margin: EdgeInsets.only(top: 15),
-            child: Column(
+          
+          Container( // PRIMEIRO CONTAINER
+            padding: const EdgeInsets.all(12),
+            margin: const EdgeInsets.only(top: 15),
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Bora ver se essa merda funciona",
+                  "Criar uma História",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  "Já estou sem paciência",
+                  "Para  começar, você precisa dar um título à sua obra:",
                   textAlign: TextAlign.left,
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 15,
                       fontWeight: FontWeight.normal),
-                )
+                ),
               ],
+            ),
+          ),
+          
+          Container( // CAIXA TEXTO INPUT TITULO
+            padding: const EdgeInsets.all(12),
+            // margin: EdgeInsets.only(top: 5),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: "Título",
+                border: OutlineInputBorder(),
+              ),
             ),
           )
         ],
