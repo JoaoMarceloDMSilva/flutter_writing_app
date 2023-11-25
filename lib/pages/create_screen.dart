@@ -6,37 +6,35 @@ class CreateScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      appBar: AppBar(//APP BAR
+      appBar: AppBar(
         backgroundColor: const Color(0xff2C2828),
         elevation: 0,
-        title: const Text("Nome App",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        title: const Text(
+          "Nome App",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
         leading: const Icon(
           Icons.arrow_back,
         ),
         actions: [
-          Padding(
-            padding:
-                const EdgeInsets.all(10.0), // Add padding around the button
-            child: FloatingActionButton(
-              backgroundColor: Colors.white,
-              foregroundColor: Colors.black,
-              onPressed: () {},
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(12))),
-              child: Text(
-                "Criar",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
+          TextButton(
+            onPressed: () {
+              // Adicione a lógica para a ação do botão "Criar" aqui
+            },
+            child: const Text(
+              "Criar",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
-          )
+          ),
         ],
       ),
       body: Column(
         children: [
-          
-          Container( // PRIMEIRO CONTAINER
+          Container(
+            // PRIMEIRO CONTAINER
             padding: const EdgeInsets.all(12),
             margin: const EdgeInsets.only(top: 15),
             child: const Column(
@@ -61,8 +59,8 @@ class CreateScreen extends StatelessWidget {
               ],
             ),
           ),
-          
-          Container( // CAIXA TEXTO INPUT TITULO
+          Container(
+            // CAIXA TEXTO INPUT TITULO
             padding: const EdgeInsets.all(12),
             // margin: EdgeInsets.only(top: 5),
             child: TextField(
@@ -73,32 +71,30 @@ class CreateScreen extends StatelessWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(20),
-            child: const Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Adicionar Personagens",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold
+              padding: const EdgeInsets.all(20),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Adicionar Personagens",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
                   ),
-                ),
-                Text(
-                  "O que é uma história sem personagens? Adicione pelo menos um personagem. Você poderá editá-lo melhor e adicionar mais outros porsteriormente.",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.normal
-                  ),
-                )
-              ],
-            )
-          ),
-          Container( // CAIXA TEXTO INPUT TITULO
+                  Text(
+                    "O que é uma história sem personagens? Adicione pelo menos um personagem. Você poderá editá-lo melhor e adicionar mais outros porsteriormente.",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.normal),
+                  )
+                ],
+              )),
+          Container(
+            // CAIXA TEXTO INPUT TITULO
             padding: const EdgeInsets.all(12),
             // margin: EdgeInsets.only(top: 5),
             child: TextField(

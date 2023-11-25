@@ -7,7 +7,6 @@ class CreateNote extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //APP BAR
         backgroundColor: const Color(0xff2C2828),
         elevation: 0,
         title: const Text(
@@ -18,51 +17,43 @@ class CreateNote extends StatelessWidget {
           Icons.arrow_back,
         ),
         actions: [
-          Padding(
-            padding:
-                const EdgeInsets.all(10.0), // Add padding around the button
-            child: FloatingActionButton(
-              backgroundColor: Colors.white,
-              foregroundColor: Colors.black,
-              onPressed: () {},
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: const Text(
-                "Salvar",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
+          TextButton(
+            onPressed: () {
+              // Adicione a lógica para salvar aqui
+            },
+            child: const Text(
+              "Salvar",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
-          )
+          ),
         ],
       ),
       body: Column(
         children: [
-          Container( // PRIMEIRO CONTAINER
+          Container(
+            // CAIXA TEXTO INPUT TITULO
             padding: const EdgeInsets.all(12),
-            margin: const EdgeInsets.only(top: 2),
-            child: const Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Título",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
+            // margin: EdgeInsets.only(top: 5),
+            child: TextField( // TÍTULO
+              decoration: InputDecoration(
+                hintText: "Título",
+                border: OutlineInputBorder(),
+              ),
             ),
           ),
-          Container( // CAIXA TEXTO INPUT TITULO
+          Container(
+            // CAIXA TEXTO INPUT TEXTO
             padding: const EdgeInsets.all(12),
             // margin: EdgeInsets.only(top: 5),
             child: TextField(
               decoration: InputDecoration(
-                //hintText: "Título",
+                hintText: "Texto",
                 border: OutlineInputBorder(),
               ),
+              maxLines: null, // ou maxLines: true,
             ),
           ),
         ],
