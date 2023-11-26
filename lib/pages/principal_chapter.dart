@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_writing_app/my_widgets/chapter_tab_page2.dart';
+import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
 
 class PrincipalChapter extends StatelessWidget {
   const PrincipalChapter({Key? key}) : super(key: key);
@@ -19,7 +21,7 @@ class PrincipalChapter extends StatelessWidget {
             IconButton(
               onPressed: () {},
               icon: const Icon(Icons.edit),
-            )
+            ),
           ],
         ),
         body: Column(
@@ -46,11 +48,22 @@ class PrincipalChapter extends StatelessWidget {
                       Icons.history_edu,
                       color: Colors.white,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
-            // Adicione seus widgets adicionais aqui
+            Expanded(
+              child: TabBarView(
+                children: [
+                  // Página 1
+                  const TabBarAdd(chapterTitle: "Personagens"),
+                  // Página 2
+                  ChapterTabPage2(chapterTitle: "Capítulos"),
+                  // Página 3
+                  const TabBarAdd(chapterTitle: "Notas")
+                ],
+              ),
+            ),
           ],
         ),
       ),

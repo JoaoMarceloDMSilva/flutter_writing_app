@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: InitialScreen(), //Tela 01
       // home: CreateScreen(), // Tela 02
-      // home: PrincipalChapter(), // Tela 03
-      home: CreateNote(), //Tela 04
+      home: PrincipalChapter(), // Tela 03
+      // home: CreateNote(), //Tela 04
     );
   }
 }
