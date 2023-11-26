@@ -36,7 +36,7 @@ class CardImage extends StatelessWidget {
                   TextTitulo(titulo: "Alba Umbra"),
                   TextDescricao(
                     descricao:
-                        "No alto daquele cume, plantei uma roseira, o vento no cume bate, a rosa no cume cheira.",
+                        "Os modadores de Docamar relatam estranhas aparições da filha do Barão das Ostras nos arredores do Paço Nevoeiro",
                   )
                 ],
               ),

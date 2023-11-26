@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/my_widgets/card_image.dart';
 
 class InitialScreen extends StatelessWidget {
-  const InitialScreen({super.key});
+  const InitialScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,14 @@ class InitialScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Container(
-        child: Column(
-          children: [
-            CardImage()
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              CardImage(),
+              // Adicione outros widgets aqui, se necessário
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -33,3 +36,4 @@ class InitialScreen extends StatelessWidget {
     );
   }
 }
+
