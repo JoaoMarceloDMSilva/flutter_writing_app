@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       // home: CreateScreen(), // Tela 02
       // home: PrincipalChapter(), // Tela 03
       // home: CreateNote(), //Tela 04
-      // home: EditPage(),
-      home: CreateChapter(),
+      home: EditPage(),
+      // home: CreateChapter(),
     );
   }
 }

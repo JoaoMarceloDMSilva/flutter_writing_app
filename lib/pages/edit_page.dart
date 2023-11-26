@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
+import 'package:flutter_writing_app/my_widgets/build_category_add_item.dart';
+import 'package:flutter_writing_app/my_widgets/build_item.dart';
+// import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
 
 class EditPage extends StatelessWidget {
   const EditPage({Key? key});
@@ -46,68 +48,4 @@ class EditPage extends StatelessWidget {
     );
   }
 
-  Widget buildItem() {
-    return Container(
-      padding: EdgeInsets.all(12),
-      child: Row(
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.grey,
-            ),
-            child: Icon(
-              Icons.add_photo_alternate, 
-              size: 50,
-              color: Colors.black,
-            ),
-          ),
-          SizedBox(width: 6),
-          Expanded(
-            child: TextFormField(
-              decoration: InputDecoration(
-                hintText: "Título",
-                border: OutlineInputBorder(),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-Widget buildCategoryAddItem({required String chapterTitle, required String itemName}) {
-  return Container(
-    padding: EdgeInsets.all(16),
-    child: Column(
-      children: [
-        CategoryAdd(chapterTitle: chapterTitle),
-        Row(
-          children: [
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.all(12),
-                color: Colors.grey,
-                child: Text(
-                  itemName,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-            IconButton(
-              icon: Icon(Icons.delete),
-              onPressed: () {
-                // Adicione a lógica para excluir aqui
-              },
-            ),
-          ],
-        ),
-      ],
-    ),
-  );
 }
