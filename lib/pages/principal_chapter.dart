@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/my_widgets/chapter_tab_page2.dart';
 import 'package:flutter_writing_app/my_widgets/character_tab_page1.dart';
 import 'package:flutter_writing_app/my_widgets/notes_tab_page3.dart';
-import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
+// import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
 
 class PrincipalChapter extends StatelessWidget {
   const PrincipalChapter({Key? key}) : super(key: key);
