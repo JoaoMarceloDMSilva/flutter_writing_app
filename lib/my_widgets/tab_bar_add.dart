@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TabBarAdd extends StatelessWidget {
+class CategoryAdd extends StatelessWidget {
   final String chapterTitle;
 
-  const TabBarAdd({Key? key, required this.chapterTitle}) : super(key: key);
+  const CategoryAdd({Key? key, required this.chapterTitle}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

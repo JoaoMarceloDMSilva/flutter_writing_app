@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/pages/create_new_note.dart';
+import 'package:flutter_writing_app/pages/edit_page.dart';
 import 'package:flutter_writing_app/pages/principal_chapter.dart';
 import 'package:flutter_writing_app/pages/create_screen.dart';
 import 'package:flutter_writing_app/my_widgets/home_appbar.dart';
@@ -16,8 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: InitialScreen(), //Tela 01
       // home: CreateScreen(), // Tela 02
-      home: PrincipalChapter(), // Tela 03
+      // home: PrincipalChapter(), // Tela 03
       // home: CreateNote(), //Tela 04
+      home: EditPage(),
     );
   }
 }

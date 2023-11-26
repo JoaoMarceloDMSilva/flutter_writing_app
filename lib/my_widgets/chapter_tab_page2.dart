@@ -14,7 +14,7 @@ class ChapterTabPage2 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TabBarAdd(chapterTitle: chapterTitle),
+          CategoryAdd(chapterTitle: chapterTitle),
           ChapterTabContainer(
             title: "Título do Capítulo",
             description: "Descrição do Capítulo" * 5,
