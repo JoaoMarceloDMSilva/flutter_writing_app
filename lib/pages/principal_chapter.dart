@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/my_widgets/chapter_tab_page2.dart';
+import 'package:flutter_writing_app/my_widgets/character_tab_page1.dart';
 import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
 
 class PrincipalChapter extends StatelessWidget {
@@ -56,7 +57,7 @@ class PrincipalChapter extends StatelessWidget {
               child: TabBarView(
                 children: [
                   // Página 1
-                  const TabBarAdd(chapterTitle: "Personagens"),
+                  ChapterTabPage1(chapterTitle: "Personagens"),
                   // Página 2
                   ChapterTabPage2(chapterTitle: "Capítulos"),
                   // Página 3
