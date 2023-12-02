@@ -10,12 +10,14 @@ class MyAppBar extends StatelessWidget {
   final String nameButton;
   final bool showIcon;
   final bool showTextButton;
+  final tap;
+  final anotherTap;
   const MyAppBar(
       {super.key,
       required this.nameScreen,
       this.showIcon = true,
       this.showTextButton = true,
-      required this.nameButton});
+      required this.nameButton, this.tap, this.anotherTap});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class MyAppBar extends StatelessWidget {
             children: [
               if (showIcon)
                 InkWell(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () {Navigator.pushNamed(context, anotherTap) ?? Navigator.pop(context);} ,
                   child: const Icon(
                     Icons.arrow_back,
                     color: Colors.white,
@@ -53,9 +55,7 @@ class MyAppBar extends StatelessWidget {
           ),
           if (showTextButton)
             TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, Routes.mainPage);
-              },
+              onPressed: tap,
               child: Text(
                 nameButton,
                 style: TextStyle(

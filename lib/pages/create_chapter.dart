@@ -1,40 +1,44 @@
 import 'package:flutter/material.dart';
 
+import '../my_widgets/my_app_bar.dart';
+import '../routes/other_class_routes.dart';
+
 class CreateChapter extends StatelessWidget {
   const CreateChapter({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xff2C2828),
-        elevation: 0,
-        title: const Text(
-          "Capítulo",
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        leading: const Icon(
-          Icons.arrow_back,
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              // Adicione a lógica para salvar aqui
-            },
-            child: const Text(
-              "Salvar",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
+      // appBar: AppBar(
+      //   backgroundColor: const Color(0xff2C2828),
+      //   elevation: 0,
+      //   title: const Text(
+      //     "Capítulo",
+      //     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      //   ),
+      //   leading: const Icon(
+      //     Icons.arrow_back,
+      //   ),
+      //   actions: [
+      //     TextButton(
+      //       onPressed: () {
+      //         // Adicione a lógica para salvar aqui
+      //       },
+      //       child: const Text(
+      //         "Salvar",
+      //         style: TextStyle(
+      //           fontSize: 16,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.white,
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
+      body: SafeArea(
         child: Column(
           children: [
+            MyAppBar(nameScreen: "Capítulos", nameButton: "Salvar", tap: () => Navigator.pop(context)),
             Container(
               // CAIXA TEXTO INPUT TITULO
               padding: const EdgeInsets.all(12),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/my_widgets/character_caontainer.dart';
+import 'package:flutter_writing_app/routes/other_class_routes.dart';
 import 'tab_bar_add.dart';
 
 class ChapterTabPage1 extends StatelessWidget {
@@ -13,7 +14,7 @@ class ChapterTabPage1 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CategoryAdd(chapterTitle: chapterTitle),
+          CategoryAdd(myTitle: chapterTitle, tap: () => Navigator.pushNamed(context, Routes.createCharacter),),
           CharacterContainer(
             title: "Nome do Personagem",
             description: "Descrição do Personagem" * 5,

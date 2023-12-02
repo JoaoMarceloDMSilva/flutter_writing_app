@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CategoryAdd extends StatelessWidget {
-  final String chapterTitle;
+import '../routes/other_class_routes.dart';
 
-  const CategoryAdd({Key? key, required this.chapterTitle}) : super(key: key);
+class CategoryAdd extends StatelessWidget {
+  final String myTitle;
+  final tap;
+
+  const CategoryAdd({Key? key, required this.myTitle, this.tap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +20,14 @@ class CategoryAdd extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                chapterTitle,
+                myTitle,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               IconButton(
-                onPressed: () {
-                  // Adicione a lógica aqui
-                },
+                onPressed: tap,
                 icon: Icon(Icons.add),
               ),
             ],

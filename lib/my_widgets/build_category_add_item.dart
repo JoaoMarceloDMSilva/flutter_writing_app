@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
+import 'package:flutter_writing_app/routes/other_class_routes.dart';
 
-Widget buildCategoryAddItem({required String chapterTitle, required String itemName}) {
-  return Container(
+class CategoryAddItem extends StatelessWidget {
+  final String chapterTitle;
+  final String itemName;
+  final screenPointer;
+  const CategoryAddItem({super.key, required this.chapterTitle, required this.itemName, this.screenPointer});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
     padding: EdgeInsets.all(16),
     child: Column(
       children: [
-        CategoryAdd(chapterTitle: chapterTitle),
+        CategoryAdd(myTitle: chapterTitle, tap: () => Navigator.pushNamed(context, screenPointer),),
         Row(
           children: [
             Expanded(
@@ -33,3 +41,5 @@ Widget buildCategoryAddItem({required String chapterTitle, required String itemN
     ),
   );
 }
+
+  }

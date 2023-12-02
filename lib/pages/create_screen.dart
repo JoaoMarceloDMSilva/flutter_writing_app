@@ -12,7 +12,7 @@ class CreateScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            MyAppBar(nameScreen: "Criar Nota", nameButton: "Criar",),
+            MyAppBar(nameScreen: "Criar Nota", nameButton: "Criar", tap: () => Navigator.pushNamed(context, Routes.mainPage),),
             Container(
               // PRIMEIRO CONTAINER
               padding: const EdgeInsets.all(12),

@@ -3,6 +3,8 @@ import 'package:flutter_writing_app/my_widgets/chapter_tab_page2.dart';
 import 'package:flutter_writing_app/my_widgets/character_tab_page1.dart';
 import 'package:flutter_writing_app/my_widgets/my_app_bar.dart';
 import 'package:flutter_writing_app/my_widgets/notes_tab_page3.dart';
+
+import '../routes/other_class_routes.dart';
 // import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
 
 class MainChapter extends StatelessWidget {
@@ -19,6 +21,8 @@ class MainChapter extends StatelessWidget {
               MyAppBar(
                 nameScreen: "Titulo",
                 nameButton: "Editar",
+                tap: () => Navigator.pushNamed(context, Routes.editPage),
+                anotherTap: Routes.initialScreen,
               ),
               Container(
                 color: const Color(0xff2C2828), // Cor de fundo da AppBar
