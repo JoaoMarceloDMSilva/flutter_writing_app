@@ -7,6 +7,8 @@ import 'package:flutter_writing_app/pages/principal_chapter.dart';
 import 'package:flutter_writing_app/pages/create_screen.dart';
 import 'package:flutter_writing_app/my_widgets/home_appbar.dart';
 import 'package:flutter_writing_app/pages/initial_screen.dart';
+import 'package:flutter_writing_app/routes/other_class_routes.dart';
+import 'package:flutter_writing_app/routes/routes.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -17,7 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: InitialScreen(), //Tela 01
+      initialRoute: Rename.initialScreen,
+      routes: MyRoutes.routes, //Tela 01
       // home: CreateScreen(), // Tela 02
       // home: PrincipalChapter(), // Tela 03
       // home: CreateNote(), //Tela 04
