@@ -11,41 +11,47 @@ class InitialScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: const Color(0xff2C2828),
-      //   elevation: 0,
-      //   title: const Text("Nome App"),
-      //   actions: [
-      //     IconButton(
-      //       onPressed: () {},
-      //       icon: const Icon(Icons.settings),
-      //     )
-      //   ],
-      // ),
-      body: Column(
-        
+      appBar: AppBar(
+        backgroundColor: const Color(0xff2C2828),
+        elevation: 0,
+        title: const Text("Nome App"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.settings),
+          )
+        ],
+      ),
+      body: SafeArea(
+        child: Column(
           children: [
-            MyAppBar(
-              nameScreen: "Nome App",
-              showIcon: false,
+            // MyAppBar(
+            //   nameScreen: "Nome App",
+            //   showIcon: false,
+            //   showTextButton: false,
+            // ),
+            Expanded(
+              child: ListView(
+                children: [
+                  CardImage(),
+                  CardImage(),
+                  CardImage(),
+                  CardImage(),
+                  CardImage(),
+                  CardImage(),
+                  CardImage(),
+                  CardImage(),
+                  CardImage(),
+                  CardImage(),
+                ],
+              ),
             ),
-            
-              ChapterTabPage1(chapterTitle: "Personagens")
-            //   CardImage(),
-            //   CardImage(),
-            //   CardImage(),
-            //   CardImage(),
-            //   CardImage(),
-            //   CardImage(),
-            //   CardImage(),
-            //   CardImage(),
-            //   CardImage(),
-            //   CardImage(),
+
             // // ),
 
             // Adicione outros widgets aqui, se necessário
           ],
-        
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xff2C2828),

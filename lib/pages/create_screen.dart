@@ -9,37 +9,10 @@ class CreateScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: const Color(0xff2C2828),
-      //   elevation: 0,
-      //   title: const Text(
-      //     "Nome App",
-      //     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-      //   ),
-      //   leading: InkWell( onTap: () => Navigator.pop(context),
-      //     child: const Icon(
-      //       Icons.arrow_back,
-      //     ),
-      //   ),
-      //   actions: [
-      //     TextButton(
-      //       onPressed: () {
-      //         Navigator.pushNamed(context, Routes.mainPage);
-      //       },
-      //       child: const Text(
-      //         "Criar",
-      //         style: TextStyle(
-      //             fontSize: 16,
-      //             fontWeight: FontWeight.bold,
-      //             color: Colors.white),
-      //       ),
-      //     ),
-      //   ],
-      // ),
       body: SafeArea(
         child: Column(
           children: [
-            MyAppBar(nameScreen: "Criar Nota"),
+            MyAppBar(nameScreen: "Criar Nota", nameButton: "Criar",),
             Container(
               // PRIMEIRO CONTAINER
               padding: const EdgeInsets.all(12),
