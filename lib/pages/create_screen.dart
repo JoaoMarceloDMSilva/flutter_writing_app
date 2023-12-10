@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/my_widgets/my_app_bar.dart';
 
+import '../classes/card_image_list.dart';
 import '../routes/other_class_routes.dart';
 
 class CreateScreen extends StatelessWidget {
-  const CreateScreen({super.key});
+  CreateScreen({super.key});
+  final TextEditingController _titleController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,15 @@ class CreateScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            MyAppBar(nameScreen: "Criar Nota", nameButton: "Criar", tap: () => Navigator.pushNamed(context, Routes.mainPage),),
+            MyAppBar(
+              nameScreen: "Criar Nota",
+              nameButton: "Criar",
+              tap: () {
+                String title = _titleController.text;
+                cardImageList.addCard(title);
+                Navigator.pushNamed(context, Routes.mainPage);
+              },
+            ),
             Container(
               // PRIMEIRO CONTAINER
               padding: const EdgeInsets.all(12),
@@ -44,6 +54,7 @@ class CreateScreen extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               // margin: EdgeInsets.only(top: 5),
               child: TextField(
+                controller: _titleController,
                 decoration: InputDecoration(
                   hintText: "Título",
                   border: OutlineInputBorder(),

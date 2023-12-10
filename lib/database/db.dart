@@ -72,4 +72,40 @@ class DB {
   );
 
   ''';
+
+  Future<void> insertHistoria(String titulo, String descricao) async {
+    final db = await database;
+    await db.insert(
+      'Historia',
+      {'titulo': titulo, 'descricao': descricao},
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+
+  Future<void> insertPersonagem(String nome, String descricao, int historiaId) async {
+    final db = await database;
+    await db.insert(
+      'Personagens',
+      {'nome': nome, 'descricao': descricao, 'historia_id': historiaId},
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+
+  Future<void> insertCapitulo(String titulo, String conteudo, int historiaId) async {
+    final db = await database;
+    await db.insert(
+      'Capitulos',
+      {'titulo': titulo, 'conteudo': conteudo, 'historia_id': historiaId},
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+
+  Future<void> insertNota(String titulo, String conteudo, int historiaId) async {
+    final db = await database;
+    await db.insert(
+      'Notas',
+      {'titulo': titulo, 'conteudo': conteudo, 'historia_id': historiaId},
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
 }

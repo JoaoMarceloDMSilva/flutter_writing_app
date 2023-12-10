@@ -6,7 +6,8 @@ import 'package:flutter_writing_app/routes/other_class_routes.dart';
 
 class CardImage extends StatelessWidget {
   final tap;
-  const CardImage({super.key, this.tap});
+  final String title;
+  const CardImage({Key? key, this.tap, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +37,10 @@ class CardImage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextTitulo(titulo: "Alba Umbra"),
+                    TextTitulo(titulo: title),
                     TextDescricao(
                       descricao:
-                          "Os modadores de Docamar relatam estranhas aparições da filha do Barão das Ostras nos arredores do Paço Nevoeiro",
+                          "Descrição...",
                     )
                   ],
                 ),

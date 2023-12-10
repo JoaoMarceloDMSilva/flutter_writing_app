@@ -35,6 +35,7 @@ class MyAppBar extends StatelessWidget {
             children: [
               if (showIcon)
                 InkWell(
+                  // onTap: () {Navigator.pushNamed(context, anotherTap);} ,
                   onTap: () {Navigator.pushNamed(context, anotherTap) ?? Navigator.pop(context);} ,
                   child: const Icon(
                     Icons.arrow_back,
