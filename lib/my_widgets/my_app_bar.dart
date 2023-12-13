@@ -7,22 +7,25 @@ import '../routes/other_class_routes.dart';
 
 class MyAppBar extends StatelessWidget {
   final String nameScreen;
-  final String nameButton;
+  String? nameButton;
   final bool showIcon;
   final bool showTextButton;
-  final tap;
-  final anotherTap;
-  const MyAppBar(
+  final rightTap;
+  final leftTap;
+  MyAppBar(
       {super.key,
       required this.nameScreen,
       this.showIcon = true,
       this.showTextButton = true,
-      required this.nameButton, this.tap, this.anotherTap});
+      this.nameButton,
+      this.rightTap,
+      this.leftTap,
+      });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         vertical: 15,
         horizontal: 10,
       ),
@@ -35,19 +38,19 @@ class MyAppBar extends StatelessWidget {
             children: [
               if (showIcon)
                 InkWell(
-                  // onTap: () {Navigator.pushNamed(context, anotherTap);} ,
-                  onTap: () {Navigator.pushNamed(context, anotherTap) ?? Navigator.pop(context);} ,
+                  onTap: leftTap,
+                  // onTap: () {Navigator.pushNamed(context, anotherTap) ?? Navigator.pop(context);} ,
                   child: const Icon(
                     Icons.arrow_back,
                     color: Colors.white,
                   ),
                 ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Text(
                 nameScreen,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
@@ -56,10 +59,10 @@ class MyAppBar extends StatelessWidget {
           ),
           if (showTextButton)
             TextButton(
-              onPressed: tap,
+              onPressed: rightTap,
               child: Text(
-                nameButton,
-                style: TextStyle(
+                nameButton!,
+                style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),

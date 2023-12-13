@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_writing_app/database/hive/myhistory/create_history.dart';
+// import 'package:flutter_writing_app/database/hive/chapter/create_history.dart';
 import 'package:flutter_writing_app/my_widgets/my_app_bar.dart';
 
-import '../classes/card_image_list.dart';
+// import '../classes/card_image_list.dart';
+// import '../database/hive/create_history.dart';
+import '../database/hive/hive_config.dart';
 import '../routes/other_class_routes.dart';
 
-class CreateScreen extends StatelessWidget {
-  CreateScreen({super.key});
+class CreateNewHistory extends StatelessWidget {
+  CreateNewHistory({super.key});
   final TextEditingController _titleController = TextEditingController();
+  final TextEditingController characterController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +20,29 @@ class CreateScreen extends StatelessWidget {
         child: Column(
           children: [
             MyAppBar(
-              nameScreen: "Criar Nota",
+              nameScreen: "Criar Historia",
               nameButton: "Criar",
-              tap: () {
+              leftTap: () => Navigator.pop(context),
+              rightTap: () async {
                 String title = _titleController.text;
-                cardImageList.addCard(title);
-                Navigator.pushNamed(context, Routes.mainPage);
+                String character = characterController.text;
+
+                if (title.isNotEmpty && character.isNotEmpty) {
+                  CreateHistory createHistory = CreateHistory(
+                    title: title,
+                    character: character,
+                  );
+
+                  await HiveConfig.insertHistory(createHistory);
+
+                  Navigator.pushNamed(context, Routes.mainPage);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Preencha todos os campos"),
+                    ),
+                  );
+                }
               },
             ),
             Container(
@@ -55,7 +77,7 @@ class CreateScreen extends StatelessWidget {
               // margin: EdgeInsets.only(top: 5),
               child: TextField(
                 controller: _titleController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Título",
                   border: OutlineInputBorder(),
                 ),
@@ -89,7 +111,8 @@ class CreateScreen extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               // margin: EdgeInsets.only(top: 5),
               child: TextField(
-                decoration: InputDecoration(
+                controller: characterController,
+                decoration: const InputDecoration(
                   hintText: "Personagem",
                   border: OutlineInputBorder(),
                 ),

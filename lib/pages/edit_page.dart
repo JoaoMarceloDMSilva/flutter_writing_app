@@ -8,7 +8,7 @@ import 'package:flutter_writing_app/routes/other_class_routes.dart';
 
 class EditPage extends StatelessWidget {
   const EditPage({Key? key});
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,18 +41,34 @@ class EditPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            MyAppBar(nameButton: "Salvar", nameScreen: "Editar",tap: () => Navigator.pop(context)),
-            Expanded(child: ListView(children: [
-              buildItem(),
-            CategoryAddItem(chapterTitle: "Personagens", itemName: "Nome Personagem", screenPointer: Routes.createCharacter,),
-            CategoryAddItem(chapterTitle: "Capítulos", itemName: "Nome Capítulo", screenPointer: Routes.createChapter,),
-            CategoryAddItem(chapterTitle: "Notas", itemName: "Nome Nota", screenPointer: Routes.createNote,),
-            ]),)
-            
+            MyAppBar(
+                nameButton: "Salvar",
+                nameScreen: "Editar",
+                leftTap: () => Navigator.pop(context),
+                rightTap: () => Navigator.pop(context)),
+            Expanded(
+              child: ListView(children: [
+                buildItem(),
+                CategoryAddItem(
+                  chapterTitle: "Personagens",
+                  itemName: "Nome Personagem",
+                  screenPointer: Routes.createCharacter,
+                ),
+                CategoryAddItem(
+                  chapterTitle: "Capítulos",
+                  itemName: "Nome Capítulo",
+                  screenPointer: Routes.createChapter,
+                ),
+                CategoryAddItem(
+                  chapterTitle: "Notas",
+                  itemName: "Nome Nota",
+                  screenPointer: Routes.createNote,
+                ),
+              ]),
+            )
           ],
         ),
       ),
     );
   }
-
 }

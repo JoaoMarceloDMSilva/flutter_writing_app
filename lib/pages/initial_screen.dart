@@ -3,7 +3,7 @@ import 'package:flutter_writing_app/my_widgets/card_image.dart';
 import 'package:flutter_writing_app/my_widgets/my_app_bar.dart';
 
 import '../classes/card_image_list.dart';
-import '../my_widgets/character_tab_page1.dart';
+// import '../my_widgets/character_tab_page1.dart';
 import '../routes/other_class_routes.dart';
 
 class InitialScreen extends StatelessWidget {

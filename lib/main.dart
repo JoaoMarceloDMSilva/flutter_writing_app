@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/routes/other_class_routes.dart';
 import 'package:flutter_writing_app/routes/routes.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main(List<String> args) {
+import 'database/hive/hive_adapter.dart';
+import 'database/hive/hive_config.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await HiveConfig.start();
+  Hive.registerAdapter(HiveAdapter());
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {

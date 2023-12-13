@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_writing_app/database/hive/chapter/create_chapter.dart';
+import 'package:flutter_writing_app/database/hive/hive_config.dart';
+import 'package:flutter_writing_app/routes/other_class_routes.dart';
 
 import '../my_widgets/my_app_bar.dart';
-import '../routes/other_class_routes.dart';
+// import '../routes/other_class_routes.dart';
 
 class CreateChapter extends StatelessWidget {
-  const CreateChapter({Key? key}) : super(key: key);
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController chapterController = TextEditingController();
+  CreateChapter({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +43,33 @@ class CreateChapter extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            MyAppBar(nameScreen: "Capítulos", nameButton: "Salvar", tap: () => Navigator.pop(context)),
+            MyAppBar(
+              nameScreen: "Capítulos",
+              nameButton: "Salvar",
+              leftTap: () => Navigator.pop(context),
+              rightTap: () async {
+                String title = _titleController.text;
+                String character = chapterController.text;
+
+                if (title.isNotEmpty && character.isNotEmpty) {
+                  CreateChapters createChapters = CreateChapters(
+                    titulo: title,
+                    descricao: character,
+                  );
+
+                  await HiveConfig.insertChapter(createChapters);
+                  
+                  //Roteamento
+                  Navigator.pushNamed(context, Routes.mainPage);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Preencha todos os campos"),
+                    ),
+                  );
+                }
+              },
+            ),
             Container(
               // CAIXA TEXTO INPUT TITULO
               padding: const EdgeInsets.all(12),

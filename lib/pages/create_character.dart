@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_writing_app/database/hive/character/create_character.dart';
+import 'package:flutter_writing_app/database/hive/hive_config.dart';
 import 'package:flutter_writing_app/my_widgets/build_category_add_item.dart';
 import 'package:flutter_writing_app/my_widgets/build_item.dart';
 import 'package:flutter_writing_app/my_widgets/my_app_bar.dart';
@@ -7,7 +9,9 @@ import '../routes/other_class_routes.dart';
 // import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
 
 class CreateCharcter extends StatelessWidget {
-  const CreateCharcter({Key? key});
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController characterController = TextEditingController();
+  CreateCharcter({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +45,32 @@ class CreateCharcter extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            MyAppBar(nameScreen: "Personagem", nameButton: "Salvar", tap: () => Navigator.pop(context),),
+            MyAppBar(
+              nameScreen: "Personagem",
+              nameButton: "Salvar",
+              leftTap: () => Navigator.pop(context),
+              rightTap: () async {
+                String title = _titleController.text;
+                String character = characterController.text;
+
+                if (title.isNotEmpty && character.isNotEmpty) {
+                  CreatePersonagem createPersonagem = CreatePersonagem(
+                    nome: title,
+                    descricao: character,
+                  );
+
+                  await HiveConfig.insertCharacter(createPersonagem);
+
+                  Navigator.pushNamed(context, Routes.mainPage);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Preencha todos os campos"),
+                    ),
+                  );
+                }
+              },
+            ),
             Expanded(
               child: ListView(
                 children: [

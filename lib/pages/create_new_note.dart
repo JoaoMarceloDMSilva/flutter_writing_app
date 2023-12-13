@@ -40,7 +40,8 @@ class CreateNewNote extends StatelessWidget {
             MyAppBar(
               nameScreen: "Criar Nota",
               nameButton: "Criar",
-              tap: () => Navigator.pop(context),
+              leftTap: () => Navigator.pop(context),
+              rightTap: () => Navigator.pop(context),
             ),
             Expanded(
               child: ListView(

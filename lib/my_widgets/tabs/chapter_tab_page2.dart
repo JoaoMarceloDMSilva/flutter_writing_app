@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/my_widgets/chapter_container.dart';
-import '../routes/other_class_routes.dart';
-import 'tab_bar_add.dart';
+import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
+import 'package:flutter_writing_app/routes/other_class_routes.dart';
+// import '../routes/other_class_routes.dart';
+// import 'tab_bar_add.dart';
 
 class ChapterTabPage2 extends StatelessWidget {
   final String chapterTitle;

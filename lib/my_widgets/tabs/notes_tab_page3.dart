@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_writing_app/my_widgets/tab_bar_add.dart';
+import 'package:flutter_writing_app/routes/other_class_routes.dart';
 
-import '../routes/other_class_routes.dart';
+// import '../routes/other_class_routes.dart';
 
 class NotesTabPage3 extends StatefulWidget {
   final String chapterTitle;
@@ -23,6 +24,7 @@ class _NotesTabPage3State extends State<NotesTabPage3> {
         children: [
           CategoryAdd(
             myTitle: widget.chapterTitle,
+            
             tap: () => Navigator.pushNamed(context, Routes.createNote),
           ),
           Container(
